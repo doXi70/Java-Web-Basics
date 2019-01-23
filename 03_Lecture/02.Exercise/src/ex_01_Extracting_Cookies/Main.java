@@ -12,7 +12,7 @@ public class Main {
         String line;
         //INFO: to be valid input according to the task
         // if there is empty cookie header it will be after it with space
-        // not just "Cookie:", but it will be "Cookie ".
+        // not just "Cookie:", but it will be "Cookie: ".
         while (!"".equals(line = reader.readLine())) {
             if (line.split("\\s+")[0].equals("Cookie:")) {
                 String cookieContents = line.split("\\s+", 2)[1];
