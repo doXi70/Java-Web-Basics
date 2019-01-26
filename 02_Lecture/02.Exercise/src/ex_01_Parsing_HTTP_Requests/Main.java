@@ -9,9 +9,6 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // IMPORTANT: By TASK REQUIREMENTS DATE: header should not be included if its not in the request
-        // EVEN that in 3 and 4 there is date in the response, I accepted that this is mistake
-        // IN the TASK
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String requestBody;
@@ -48,7 +45,7 @@ public class Main {
 
             response.append(System.lineSeparator())
                     .append("You are not authorized to access the requested functionality.");
-        } else if (methodUrlVersionTokens[0].equals("POST") && requestBody == null) {
+        } else if (methodUrlVersionTokens[0].equals("POST") && requestBody.equals("")) {
             response.append(methodUrlVersionTokens[2]).append(" 400 Bad Request")
                     .append(System.lineSeparator());
 
@@ -74,9 +71,6 @@ public class Main {
             response.append(System.lineSeparator()).append(buildResponseBody(requestBody, username));
         }
 
-        // IMPORTANT: By TASK REQUIREMENTS DATE: header should not be included if its not in the request
-        // EVEN that in 3 and 4 there is date in the response, I accepted that this is mistake
-        // IN the TASK
         System.out.println(response);
     }
 
@@ -117,14 +111,6 @@ public class Main {
                     break;
             }
         });
-    }
-
-    // IMPORTANT: By TASK REQUIREMENTS DATE: header should not be included if its not in the request
-    // EVEN that in 3 and 4 there is date in the response, I accepted that this is mistake
-    // IN the TASK
-    private static String getCurrentDate() {
-        LocalDate now = LocalDate.now();
-        return String.format("%02d/%02d/%04d", now.getDayOfMonth(), now.getMonthValue(), now.getYear());
     }
 
     private static boolean isRequestUrlPathValid(String pathRequested, List<String> validPaths) {
