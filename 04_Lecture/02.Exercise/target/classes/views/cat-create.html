@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a cat!</title>
+</head>
+<body>
+    <h1>Create a Cat!</h1>
+    <form method="post" action="/cats/create">
+        <label for="cat-name">Name:</label>
+        <input type="text" id="cat-name" name="name" />
+        <br>
+        <label for="cat-breed">Breed:</label>
+        <input type="text" id="cat-breed" name="breed" />
+        <br>
+        <label for="cat-color">Color:</label>
+        <input type="text" id="cat-color" name="color" />
+        <br>
+        <label for="cat-legs">Number of legs:</label>
+        <input type="number" id="cat-legs" name="legs"/>
+        <br>
+        <input type="submit" value="Create Cat">
+    </form>
+    <br>
+    <a href="/">Back To Home</a>
+</body>
+</html>
